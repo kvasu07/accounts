@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 @Api(description = "Operations to get accountList and transactionList", position = 1)
-public class AccountsController extends AbstractRestHandler {
+public class AccountsController{
 
     @Autowired
     private AccountsService accountsService;
