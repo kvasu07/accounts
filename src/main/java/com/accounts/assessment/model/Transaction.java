@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -21,7 +18,6 @@ public class Transaction implements Serializable {
     @Column(name = "id")
     private int id;
 
-    //foreign key
     @Column(name = "accountNumber")
     private Long accountNumber;
 
@@ -47,3 +43,6 @@ public class Transaction implements Serializable {
     private String transactionNarrative;
 
 }
+
+
+
