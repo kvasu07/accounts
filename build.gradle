@@ -1,0 +1,33 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
+}
+
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+war {
+    baseName = 'accounts'
+    version = '1.0.0'
+}
+
+apply from: "$rootDir/gradle/integration-test.gradle"
+apply from: "$rootDir/gradle/code-analysis.gradle"
+apply from: "$rootDir/gradle/deploy.gradle"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile 'org.projectlombok:lombok:1.16.4'
+    compile group: 'io.swagger', name: 'swagger-annotations', version: '1.5.5'
+
+    runtime('com.h2database:h2')
+    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+    providedRuntime('org.apache.tomcat.embed:tomcat-embed-jasper')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
