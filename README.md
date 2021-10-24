@@ -4,20 +4,11 @@ A sample spring boot application with H2 db integration.
 
 Commands
 
-[source]
-----
 ./gradlew clean
-----
 
-[source]
-----
 ./gradlew build
-----
 
-[source]
-----
 ./gradlew bootRun
-----
 
 H2 DB Console - http://localhost:8181/h2-console/
 
