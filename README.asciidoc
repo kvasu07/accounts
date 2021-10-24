@@ -6,7 +6,10 @@ Commands
 
 ./gradlew build
 
+
+
 ./gradlew bootRun
+
 
 H2 DB Console - http://localhost:8181/h2-console/
 
