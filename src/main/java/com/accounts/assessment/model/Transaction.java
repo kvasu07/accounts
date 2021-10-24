@@ -1,45 +1,49 @@
 package com.accounts.assessment.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.Data;
+import java.io.Serializable;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "transactions")
-public class Transaction {
+public class Transaction implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "id")
     private int id;
 
     //foreign key
-    @Column
+    @Column(name = "accountNumber")
     private Long accountNumber;
 
-    @Column
+    @Column(name = "accountName")
     private String accountName;
 
-    @Column
+    @Column(name = "currency")
     private String currency;
 
-    @Column
+    @Column(name = "valueDate")
     private String valueDate;
 
-    @Column
+    @Column(name = "creditAmount")
     private BigDecimal creditAmount;
 
-    @Column
+    @Column(name = "debitAmount")
     private BigDecimal debitAmount;
 
-    @Column
+    @Column(name = "debitCredit")
     private String debitCredit;
 
-    @Column
+    @Column(name = "transactionNarrative")
     private String transactionNarrative;
+
 }
