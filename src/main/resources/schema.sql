@@ -12,7 +12,7 @@ create table accounts (
 
 
 create table transactions (
-  id varchar(255) primary key,
+  id integer AUTO_INCREMENT primary key,
   accountNumber bigint(30),
   accountName varchar(60),
   currency varchar(5),
@@ -20,5 +20,6 @@ create table transactions (
   creditAmount numeric(6,2),
   debitAmount numeric(6,2),
   debitCredit varchar(20),
-  transactionNarrative varchar(255)
+  transactionNarrative varchar(255),
+  FOREIGN KEY (accountNumber) REFERENCES accounts(accountNumber)
 );
