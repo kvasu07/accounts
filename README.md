@@ -22,4 +22,5 @@ Commands
 
 H2 DB Console - http://localhost:8181/h2-console/
 
+Swagger UI - http://localhost:8181/swagger-ui.html
 
