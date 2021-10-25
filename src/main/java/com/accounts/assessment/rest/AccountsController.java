@@ -24,7 +24,7 @@ public class AccountsController{
 
     @RequestMapping(value = "/accounts",
             method = RequestMethod.GET,
-            produces = {"application/json", "application/xml"})
+            produces = {"application/json"})
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation(value = "Get list of accounts.")
     public ResponseEntity<List<Account>> getAccounts() {
@@ -37,7 +37,7 @@ public class AccountsController{
 
     @RequestMapping(value = "/transactions/{accountNumber}",
             method = RequestMethod.GET,
-            produces = {"application/json", "application/xml"})
+            produces = {"application/json"})
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation(value = "Get list of transactions.")
     public ResponseEntity<List<Transaction>> getTransactions(@ApiParam(value = "The account number", required = true)
